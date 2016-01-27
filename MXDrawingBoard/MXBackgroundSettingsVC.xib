@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MXBackgroundSettingsVC" customModule="MXDrawingBoard" customModuleProvider="target">
+            <connections>
+                <outlet property="colorPicker" destination="Qa5-vz-pRi" id="6aS-9i-ijd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HU-Y6-DaA">
+                    <rect key="frame" x="8" y="8" width="200" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Qqi-Pc-H3A"/>
+                        <constraint firstAttribute="height" constant="21" id="sKh-17-DW9"/>
+                    </constraints>
+                    <state key="normal" title="从相册选取图片"/>
+                    <connections>
+                        <action selector="pickImage:" destination="-1" eventType="touchUpInside" id="dMc-1C-yXP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qa5-vz-pRi" customClass="MXRGBColorPicker" customModule="MXDrawingBoard" customModuleProvider="target">
+                    <rect key="frame" x="8" y="49" width="584" height="551"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6HU-Y6-DaA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="2Q1-2d-1aT"/>
+                <constraint firstItem="Qa5-vz-pRi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7NZ-tr-u3H"/>
+                <constraint firstAttribute="bottom" secondItem="Qa5-vz-pRi" secondAttribute="bottom" id="Fa4-qC-btR"/>
+                <constraint firstItem="Qa5-vz-pRi" firstAttribute="top" secondItem="6HU-Y6-DaA" secondAttribute="bottom" constant="20" id="Yql-O4-nu6"/>
+                <constraint firstItem="6HU-Y6-DaA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="jJm-PR-JYi"/>
+                <constraint firstAttribute="trailing" secondItem="Qa5-vz-pRi" secondAttribute="trailing" constant="8" id="pzf-3k-csV"/>
+            </constraints>
+            <point key="canvasLocation" x="483" y="269"/>
+        </view>
+    </objects>
+</document>

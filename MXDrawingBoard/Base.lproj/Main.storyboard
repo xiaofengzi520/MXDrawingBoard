@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MXDrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxT-jS-Wcs" customClass="MXBoardView" customModule="MXDrawingBoard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bm2-Gx-o4k">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qvi-Zb-Akk">
+                                        <rect key="frame" x="20" y="7.5" width="560" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="dIO-hH-lv6"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="铅笔"/>
+                                            <segment title="直尺"/>
+                                            <segment title="虚线"/>
+                                            <segment title="矩形"/>
+                                            <segment title="圆形"/>
+                                            <segment title="橡皮擦"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="switchBrush:" destination="BYZ-38-t0r" eventType="valueChanged" id="opb-BO-FIA"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Qvi-Zb-Akk" firstAttribute="top" secondItem="bm2-Gx-o4k" secondAttribute="top" constant="7.5" id="dj2-vy-6Nr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qvi-Zb-Akk" secondAttribute="trailing" constant="20" id="hIy-z9-Td1"/>
+                                    <constraint firstAttribute="height" constant="44" id="j7i-NP-VFM"/>
+                                    <constraint firstItem="Qvi-Zb-Akk" firstAttribute="leading" secondItem="bm2-Gx-o4k" secondAttribute="leading" constant="20" id="u5B-md-loa"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvq-RW-vPv">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="adR-HG-YAN"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="画笔设置" id="b4b-gC-7JB">
+                                        <connections>
+                                            <action selector="setting:" destination="BYZ-38-t0r" id="U3g-Ze-Z7Q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="背景设置" id="PeK-cG-XgB">
+                                        <connections>
+                                            <action selector="backgroundSetting:" destination="BYZ-38-t0r" id="xk7-wF-S8g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="保存到图库" id="SOz-Z2-OIG">
+                                        <connections>
+                                            <action selector="saveImage:" destination="BYZ-38-t0r" id="bM0-8Q-Mai"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bm2-Gx-o4k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="25b-rM-XKI"/>
+                            <constraint firstItem="bm2-Gx-o4k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="BRI-BX-n0F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bm2-Gx-o4k" secondAttribute="trailing" constant="-20" id="CLo-fq-3bN"/>
+                            <constraint firstItem="rxT-jS-Wcs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="OqK-qZ-Gwc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rxT-jS-Wcs" secondAttribute="bottom" id="SfJ-US-kfU"/>
+                            <constraint firstItem="Hvq-RW-vPv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="cjU-hy-bJR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rxT-jS-Wcs" secondAttribute="trailing" constant="-20" id="fG7-BI-zza"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hvq-RW-vPv" secondAttribute="bottom" id="fQp-za-Qdj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hvq-RW-vPv" secondAttribute="trailing" constant="-20" id="ha2-vD-FxZ"/>
+                            <constraint firstItem="rxT-jS-Wcs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="z2M-4J-hQF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="rxT-jS-Wcs" id="Uc7-vK-ONG"/>
+                        <outlet property="toolBar" destination="Hvq-RW-vPv" id="EqH-6a-6df"/>
+                        <outlet property="toolbarConstraintBottom" destination="fQp-za-Qdj" id="LJl-h5-4BC"/>
+                        <outlet property="toolbarConstraintHeight" destination="adR-HG-YAN" id="EAC-ad-vlx"/>
+                        <outlet property="topView" destination="bm2-Gx-o4k" id="evG-Ig-IsX"/>
+                        <outlet property="topViewConstraintY" destination="BRI-BX-n0F" id="WD1-0P-7ja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="353"/>
+        </scene>
+    </scenes>
+</document>
